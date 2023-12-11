@@ -56,16 +56,6 @@ header {
   flex-flow: row wrap;
 }
 
-body > * {
-  background-color: red;
-  padding: 1%;
-}
-
-main, header, nav, article, aside, footer, section {
-  background-color: rgba(0,255,0,0.5);
-  padding: 1%;
-}
-
 h1 {
   flex: 5;
   text-transform: uppercase;
@@ -77,40 +67,16 @@ header img {
   padding-top: 20.15px;
 }
 
-nav {
-  height: 50px;
-  flex: 100%;
-  display: flex;
-}
-
-nav ul {
-  padding: 0;
-  list-style-type: none;
-  flex: 2;
-  display: flex;
-}
-
-nav li {
-  display: inline;
-  text-align: center;
-  flex: 1;
-}
-
-nav a, nav span {
-  display: inline-block;
-  font-size: 2rem;
-  height: 3rem;
-  line-height: 1.7;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: black;
-
-}
-
 /* || main layout */
 
 main {
   display: flex;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+nav:hover + main {
+  opacity: 0.5;
 }
 
 article, section {
@@ -129,10 +95,63 @@ aside a {
   width: 50%;
 }
 
-aside img {
-  max-width: 100%;
+/* Images style */
+
+img {
+  max-width: 100px;
+  max-height: 100px;
 }
 
-footer {
-  margin-top: 10px;
+.img-links {
+  display: flex;
+  justify-content: space-around;
 }
+
+/* Footer style */
+
+footer {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+footer:hover {
+  opacity: 1;
+}
+
+footer a {
+  text-align: center;
+  text-decoration: none;
+  color: black; 
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Menu style*/
+
+.main-menu {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+}
+
+.main-menu li {
+  margin: 0;
+}
+
+/* Ajouter une transition pour une animation douce lors du survol */
+.main-menu a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-menu a:hover {
+  background-color: #555;
+  color: #fff; /* Optionnel : changer la couleur du texte lors du survol */
+}
+
